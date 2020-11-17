@@ -1,0 +1,147 @@
+{% extends 'core/base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+	{% include 'triagens/includes/_barra_botoes.html' %}
+	<div class="panel panel-default">
+		<div class="panel-heading" style="background-color: #337ab7; color: #ffffff">
+			Paciente: {{ object.nomePaciente }} 
+		</div>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<td>Código: {{ object.codigo }}</td>
+				</tr>
+				<tr>
+					<td>Data: {{ object.data|date:'d/m/Y' }}  às {{ object.hora }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="panel-heading" style="background-color: #337ab7; color: #ffffff">
+			Informações pessoais:
+		</div>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<td>Idade: {{ object.idade }}</td>
+				</tr>
+				<tr>
+					<td>Altura: {{ object.altura }}</td>
+				</tr>
+				<tr>
+					<td>Peso: {{ object.peso }}</td>
+				</tr>
+				<tr>
+					<td>IMC: {{ object.IMC }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="panel-heading" style="background-color: #337ab7; color: #ffffff">
+			Sintomas: 
+		</div>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<td>Febre: 
+						{% if object.febre %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Dor de cabeça:
+						{% if object.dorCabeca %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Secreção nasal ou espirro:
+						{% if object.ScrecaoEspirro %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Dor/Irritação na garganta:
+						{% if object.dorGarganta %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Tosse seca:
+						{% if object.tosseSeca %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Dificuldade respiratória:
+						{% if object.dificuldadeRespiratoria %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Dores no corpo:
+						{% if object.doresCorpo %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Diarreia:
+						{% if object.diarreia %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Viajou:
+						{% if object.viagem %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td>Contato:
+						{% if object.contato %}
+							{% bootstrap_icon 'ok-circle' size='sm' %}
+						{% else %}
+							{% bootstrap_icon 'remove-circle' size='sm' %}
+						{% endif %}
+					</td>
+				</tr>
+			</tbody>
+			
+		</table>
+	</div>
+	
+	
+	{% include 'triagens/includes/_barra_botoes.html' %}
+{% endblock %}
